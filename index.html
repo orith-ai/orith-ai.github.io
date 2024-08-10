@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>ORITH</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img class="logo-img" src="assets/Logo No Name Dark.png" alt="Orith Logo">
+                <div class="logo">ORITH</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact us</a></li>
+                    <li><button id="book-demo-btn">Book a Demo</button></li>
+                </ul>
+                
+                <div class="menu-button" onclick="showSidebar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                </div>
+            </nav>
+        </div>
+    
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" color="white"height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#product">Product</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact us</a></li>
+            <li><button id="book-demo-btn-sidebar">Book a Demo</button></li>
+        </ul>
+            <!-- Modal content -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Get Started with ORITH</h2>
+                    <form id="subscriptionForm">
+                        <div class="name-container">
+                            <div class="form-group">
+                                <label for="firstName">First Name*</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="e.g. John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name*</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="e.g. Doe" required>
+                            </div>
+                        </div>
+
+                        <label for="company">Company Name*</label>
+                        <input type="text" id="company" name="company" placeholder="Company Name">
+
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" placeholder="name@company.com" required>
+            
+                        <label for="plan">Plan*</label>
+                        <select id="plan" name="plan" required>
+                            <option value="starter">Starter</option>
+                            <option value="professional">Professional</option>
+                            <option value="enterprise">Enterprise</option>
+                        </select>
+            
+                        <label for="description">Describe your project*</label>
+                        <input type="text" id="description" name="description" placeholder="Let us know what project you have in mind">
+            
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            
+    </header>       
+    <main>
+         <!-- Landing Page Section -->
+         <section id="home" class="landing">
+            <div class="text-content">
+                <h1>Elevating Your Business with the Power of LLMs and GPTs.</h1>
+                <p class="slogan">
+                    <h2 class="text">AI solutions that adapt to you.</h2>
+                </p>    
+            </div>
+        </section>
+        
+        <!-- Product Page Section -->
+        <section id="product" class="product-page">
+            <h1>Why open-source LLMs?</h1>
+            <div class="product-info">
+                <div class="product-box">
+                    <div class="text-content">
+                        <h2>Leveraging Open Source LLMs</h2>
+                        <p>We utilize cutting-edge open-source LLMs, meticulously fine-tuned with your company's data to enhance performance and relevance. This approach ensures superior customization while maintaining robust data privacy.</p>
+                    </div>
+                    <div class="image-placeholder">
+                        <img src="assets/Llamas Dark.png" alt="Open Source LLMs">
+                    </div>
+                </div>
+
+                <div class="product-box reverse">
+                    <div class="text-content">
+                        <h2>Enhanced Data Privacy</h2>
+                        <p>Our solutions prioritize your data's security. By fine-tuning LLMs on your specific data, we prevent unauthorized access and data leakage, offering you peace of mind with top-tier data protection.</p>
+                    </div>
+                    <div class="image-placeholder">
+                        <img src="assets/Data.png" alt="Data">
+                    </div>
+                </div>
+
+                <div class="product-box full-width">
+                    <div class="text-content">
+                        <h2>Tailored AI Solutions</h2>
+                        <p>Our comprehensive AI development process ensures that each solution is meticulously crafted to meet the unique needs of your business. We start with thorough data collection from diverse sources, followed by rigorous data preprocessing, including cleaning, transformation, and feature engineering. Our team then selects the most suitable models through extensive research and comparison. Fine-tuning involves initial training, hyperparameter tuning, and incremental training to achieve optimal performance. Each model undergoes a robust evaluation using validation sets and metrics analysis, incorporating feedback loops for continuous improvement. Upon deployment, we ensure seamless integration, rigorous testing, and a smooth rollout. Post-deployment, we prioritize monitoring and maintenance with ongoing performance monitoring, periodic updates, and prompt issue resolution, ensuring your AI solutions remain effective and aligned with your business goals.</p>
+                    </div>
+                    <div class="image-placeholder-chart-image">
+                        <img src="assets/Chart.png" alt="Chart">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Page Section-->
+        <section id="about" class="about-page">
+            <h1>Who We Are</h1>
+            <div class="about-container">
+                <div class="about-left">
+                    <div class="about-section-mission">
+                        <h2>Our Mission</h2>
+                        <p>At ORITH, we aim to transform organizations by leveraging advanced AI technologies. We are dedicated to delivering innovative solutions that drive efficiency and foster growth, all while ensuring that your data remains secure and private.</p>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <div class="about-section-vision">
+                        <h2>Our Vision</h2>
+                        <p>We envision a future where AI seamlessly integrates into every facet of business operations. Our goal is to be the catalyst for this change, empowering organizations to achieve greater success through tailored AI solutions and unparalleled data protection.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-team">
+                <h2>The Team</h2>
+                <div class="team-members">
+                    <div class="team-member">
+                        <img src="assets/yahiapp.jpeg" alt="Team Member 2">
+                        <div class="team-info">
+                            <h3>Yahia Sonbol</h3>
+                            <p>Software Engineer</p>
+                            <a href="https://www.linkedin.com/in/yahia-sonbol/" target="_blank" class="linkedin-logo">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="assets/ramzypp.png" alt="Team Member 1">
+                        <div class="team-info">
+                            <h3>Ramzy Bakir</h3>
+                            <p>Data Scientist</p>
+                            <a href="https://www.linkedin.com/in/ramzy-bakir/" target="_blank" class="linkedin-logo">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="assets/mahmoudpp.jpg" alt="Team Member 3">
+                        <div class="team-info">
+                            <h3>Mahmoud Elshikha</h3>
+                            <p>Security Engineer</p>
+                            <a href="https://www.linkedin.com/in/mahmoud-elshikha/" target="_blank" class="linkedin-logo">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+        <!-- Pricing Page Section-->
+        <section id="pricing" class="pricing-page">
+            <h1>Our Plans</h1>
+            <div class="pricing-container">
+                <div class="pricing-plan">
+                    <h2>Starter</h2>
+                    <ul>
+                        <li>• For small businesses</li>
+                        <li>• 1-99 employees</li>
+                        <li>• Limited fine-tuning</li>
+                        <li>• Basic support</li>
+                    </ul>
+                </div>
+                <div class="pricing-plan">
+                    <h2>Professional</h2>
+                    <ul>
+                        <li>• For medium businesses</li>
+                        <li>• 100-500 employees</li>
+                        <li>• Enhanced fine-tuning</li>
+                        <li>• Priority support</li>
+                    </ul>
+                </div>
+                <div class="pricing-plan">
+                    <h2>Enterprise</h2>
+                    <ul>
+                        <li>• For large businesses</li>
+                        <li>• 500+ employees</li>
+                        <li>• Full fine-tuning</li>
+                        <li>• Premium support</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-page">
+            <h1>Any questions?</h1>
+            <div class="contact-container">
+                <div class="contact-icon">
+                    <a href="mailto:orith.myr@gmail.com?subject=Inquiry%20About%20Our%20Services" class="contact-logo">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </a>                    
+                </div>
+                <div class="contact-icon">
+                        <a href="https://www.linkedin.com/company/orith" class="contact-logo">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="https://www.linkedin.com/company/orith" class="footer-logo">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <p>&copy; 2024 ORITH.<br> Established 2024.</p>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "FyOtB5Rn-Swakb-4k",
+        });
+    })();
+    </script>
+</body>
+</html>
