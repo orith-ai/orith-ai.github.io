@@ -11,12 +11,38 @@ body {
     color: white;
     overflow-x: hidden;
 }
-
+@keyframes slideX {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.slide-inverse {
+    animation: slide-X 0.7s ease-out;
+}
+@keyframes slide-X {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.slide-in {
+    animation: slideX 0.7s ease-out;
+}
 header {
     position: fixed;
-    width: 100%;    
+    width: 100%;
     top: 0;
     left: 0;
+    right: 0;
     background-color: rgb(0, 0, 0);
     padding: 20px;
     z-index: 1000;
@@ -48,6 +74,7 @@ header {
     font-weight: bold; /* Add desired styling */
 }
 
+
 nav ul {
     list-style: none;
     display: flex;
@@ -75,6 +102,7 @@ nav a {
 }
 
 #book-demo-btn:hover {
+    cursor: pointer;
     background-color: #004aad; /* Darker shade for hover */
     color: #f0f0f0; /* Lighter text color on hover */
     transform: scale(1.05); /* Slightly increase the button size */
@@ -104,7 +132,7 @@ cursor: pointer;
     right: 0;
     height: 100vh;
     width: 200px;
-    background-color: #ffbd59;
+    background-color: #c1bfbe;
     backdrop-filter: blur(12px);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     list-style: none;
@@ -114,6 +142,7 @@ cursor: pointer;
     justify-content: flex-start; /* Aligns items to the top */
     padding-top: 20px; /* Adjust this padding to control spacing from the top */
     z-index: 1000;
+    
 }
 
 .sidebar ul {
@@ -166,10 +195,15 @@ cursor: pointer;
     background-clip: text;
     color: transparent;
     text-align: center;
+    animation:slideIn 0.7s ease-out;
+
 }
 
+
 .landing h2{
-    color : #ffbd59
+    color : #ffbd59;
+    animation:slideIn 0.5s ease-out;
+
 }
 
 /* Product Page Styles */
@@ -201,15 +235,28 @@ cursor: pointer;
     width: 100%; /* Full width within the page container */
     max-width: 1200px; /* Control maximum width */
     margin: 0 auto; /* Center align the boxes */
+    
 }
 
 .product-box.reverse {
     flex-direction: row-reverse;
 }
+#details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    margin-top: 0;
 
+}
+
+#toggleButton {
+    cursor: pointer;
+    color: #004aad;
+}
 .text-content {
     max-width: 60%;
-    text-align: left; /* Text alignment for readability */
+    text-align: left; 
+    /* Text alignment for readability */
 }
 
 .text-content h2 {
@@ -537,31 +584,46 @@ cursor: pointer;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-    transform: translateY(-20%);
+    background-color: rgba(0, 0, 0, 0.4);
     justify-content: center;
     align-items: flex-start;   
     margin-top: 0px;
     z-index: 1000;
+    opacity: 0; /* Initial opacity */
+    transform: translateY(-10%); /* Initial transform */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
 }
+
 
 .modal-content {
     background-color: black;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid black;
-    width: 80%;
-    max-width: 500px;
+    margin: 10% auto;
+    padding: 15px;
+    border: 1px solid #004aad;
+    width: 70%;
+    max-width: 400px;
     border-radius: 20px;
-    border-color: #004aad;
     border-width: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out; /* Slide in animation */
 }
 
 .modal-content h2 {
     text-align: center;
+    font-size: 1.5rem;
 }
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 
 .close {
     color: #aaa;
@@ -709,32 +771,42 @@ button[type="submit"]:hover {
     display: flex;
 }
 
-
 @media only screen and (max-width: 768px) {
     .modal {
         position: fixed; /* Ensure the modal stays fixed */
-        top: 5%; /* Position modal slightly from the top */
+        top: 10%; /* Adjust the top position */
         left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Adjust horizontal centering */
-        width: 90%; /* Adjust width to fit within mobile screen */
-        max-width: 400px; /* Further limit the maximum width for smaller screens */
+        transform: translate(-50%, 0); /* Center horizontally */
+        width: 80%; /* Reduce width to fit better on small screens */
+        max-width: 400px; /* Maintain the max width */
         padding: 15px; /* Add padding for content spacing */
-        max-height: 70vh; /* Ensure the modal doesn’t exceed screen height */
-        background-color: transparent; /* Ensure the modal background is clear */
+        max-height: 60vh; /* Limit the height */
+        background-color: rgba(0, 0, 0, 0.4); /* Keep background semi-transparent */
         border-radius: 8px; /* Add rounded corners */
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    }
+    
+    .modal-content {
+        margin: 0 auto; /* Center content within modal */
+        padding: 15px;
+        width: 100%; /* Ensure content width adjusts */
+        max-width: 400px; /* Maintain the max width */
     }
 
     .modal-header {
         font-size: 16px; /* Adjust header font size */
         padding-bottom: 10px; /* Add space below header */
     }
-
+    
     .modal-body {
         font-size: 14px; /* Adjust body font size */
         padding-bottom: 15px; /* Add space below body */
     }
+    .modal.show{
+        transform:translateX(-55%);
+    }
 }
+
 
 @media only screen and (max-width: 768px) {
     /* Header adjustments */
@@ -786,7 +858,7 @@ button[type="submit"]:hover {
         top: 25px; /* Distance from the top */
         right: 45px; /* Distance from the right */
         color: white;
-        padding: 20px 20px;
+        padding: 10px 20px;
         font-size: 22px;
         border-radius: 20px;
         z-index: 1000; /* Ensure it's above other elements */
@@ -828,13 +900,18 @@ button[type="submit"]:hover {
         height: auto;
         margin: 20px 0;
     }
+    .image-placeholder-chart-image{
+        width:120%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .info-boxes {
         flex-direction: column;
     }
-
+    .product-page h1{
+        font-size: 32px;
+    }
     .product-box {
         flex-direction: column;
         text-align: center;
