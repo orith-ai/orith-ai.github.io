@@ -132,8 +132,9 @@ cursor: pointer;
     right: 0;
     height: 100vh;
     width: 200px;
-    background-color: #c1bfbe;
+    background-color: rgba(193, 191, 190, 0.6);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); 
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     list-style: none;
     display: flex;
@@ -165,7 +166,7 @@ cursor: pointer;
 }
 
 .sidebar a:hover {
-    color: lightslategray;
+    color: #0077b5;
 }
 
 .menu-button {
