@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>ORITH</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     <header>
@@ -80,8 +84,8 @@
     </header>       
     <main>
          <!-- Landing Page Section -->
-        <section id="home" class="landing" onclick="hideSidebar()">
-            <div class="text-content">
+         <section id="home" onclick="hideSidebar()" class="landing" class="auto-show">
+            <div class="text-content"id="home">
                 <h1>Elevating Your Business with the Power of LLMs and GPTs.</h1>
                 <p class="slogan">
                     <h2 class="text">AI solutions that adapt to you.</h2>
@@ -90,7 +94,7 @@
         </section>
         
         <!-- Product Page Section -->
-        <section id="product" class="product-page" onclick="hideSidebar()">
+        <section id="product"onclick="hideSidebar()"  class="product-page">
             <h1>Why open-source LLMs?</h1>
             <div class="product-info">
                 <div class="product-box">
@@ -116,7 +120,15 @@
                 <div class="product-box full-width">
                     <div class="text-content">
                         <h2>Tailored AI Solutions</h2>
-                        <p>Our comprehensive AI development process ensures that each solution is meticulously crafted to meet the unique needs of your business. We start with thorough data collection from diverse sources, followed by rigorous data preprocessing, including cleaning, transformation, and feature engineering. Our team then selects the most suitable models through extensive research and comparison. Fine-tuning involves initial training, hyperparameter tuning, and incremental training to achieve optimal performance. Each model undergoes a robust evaluation using validation sets and metrics analysis, incorporating feedback loops for continuous improvement. Upon deployment, we ensure seamless integration, rigorous testing, and a smooth rollout. Post-deployment, we prioritize monitoring and maintenance with ongoing performance monitoring, periodic updates, and prompt issue resolution, ensuring your AI solutions remain effective and aligned with your business goals.</p>
+                        <p>
+                            Our comprehensive AI development process ensures that each solution is meticulously crafted to meet the unique needs of your business. 
+                        </p>
+                        <div id="details">
+                            <p>
+                                We start with thorough data collection from diverse sources, followed by rigorous data preprocessing, including cleaning, transformation, and feature engineering. Our team then selects the most suitable models through extensive research and comparison. Fine-tuning involves initial training, hyperparameter tuning, and incremental training to achieve optimal performance. Each model undergoes a robust evaluation using validation sets and metrics analysis, incorporating feedback loops for continuous improvement. Upon deployment, we ensure seamless integration, rigorous testing, and a smooth rollout. Post-deployment, we prioritize monitoring and maintenance with ongoing performance monitoring, periodic updates, and prompt issue resolution, ensuring your AI solutions remain effective and aligned with your business goals.
+                            </p>
+                        </div>
+                        <span id="toggleButton" onclick="toggleDetails()">More details</span>                  
                     </div>
                     <div class="image-placeholder-chart-image">
                         <img src="assets/Chart.png" alt="Chart">
@@ -126,7 +138,7 @@
         </section>
         
         <!-- About Page Section-->
-        <section id="about" class="about-page" onclick="hideSidebar()">
+        <section id="about"onclick="hideSidebar()"  class="about-page">
             <h1>Who We Are</h1>
             <div class="about-container">
                 <div class="about-left">
@@ -179,7 +191,7 @@
             </div>
 </section>
         <!-- Pricing Page Section-->
-        <section id="pricing" class="pricing-page" onclick="hideSidebar()">
+        <section id="pricing"onclick="hideSidebar()" class="pricing-page">
             <h1>Our Plans</h1>
             <div class="pricing-container">
                 <div class="pricing-plan">
@@ -212,7 +224,7 @@
             </div>
         </section>
         <!-- Contact Section -->
-        <section id="contact" class="contact-page" onclick="hideSidebar()">
+        <section id="contact" onclick="hideSidebar()"class="contact-page">
             <h1>Any questions?</h1>
             <div class="contact-container">
                 <div class="contact-icon">
